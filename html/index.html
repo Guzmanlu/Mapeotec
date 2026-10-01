@@ -1,11 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapeoTec — Mapa del campus</title>
+  <meta name="description" content="Encuentra edificios, aulas y servicios del campus de forma rápida.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    
+
+  <header class="topbar">
+    <span class="brand">MapeoTec</span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="buscador-section">
+      <h1>¿A dónde vas?</h1>
+      <p class="subtitulo">Busca un edificio, salón o servicio del campus.</p>
+
+      <div class="search-box">
+        <label for="buscador" class="visually-hidden">Buscar lugar en el campus</label>
+        <input type="search" id="buscador" placeholder="Ej. Cafetería, Edificio A, baños…" autocomplete="off">
+      </div>
+
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría">
+        <button class="chip is-active" data-categoria="todos">Todos</button>
+        <button class="chip" data-categoria="aulas">Aulas</button>
+        <button class="chip" data-categoria="banos">Baños</button>
+        <button class="chip" data-categoria="cafeteria">Cafetería</button>
+        <button class="chip" data-categoria="admin">Administración</button>
+      </div>
+    </section>
+
+    <section class="mapa-section" aria-label="Mapa del campus">
+      <div class="mapa-placeholder" id="mapaPlaceholder">
+        <p>El mapa interactivo se conectará aquí</p>
+      </div>
+    </section>
+
+    <section class="resultados-section">
+      <div class="resultados-header">
+        <h2>Lugares</h2>
+        <span class="resultados-contador" id="contador"></span>
+      </div>
+
+      <ul class="lista-lugares" id="listaLugares"></ul>
+
+      <p class="sin-resultados" id="sinResultados" hidden>
+        No encontramos ese lugar. Intenta con otro nombre o categoría.
+      </p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>MapeoTec — Taller de Investigación II</p>
+  </footer>
+
+  <script src="../js/index.js" defer></script>
 </body>
-</html>
+</html>s
